@@ -1,11 +1,24 @@
-public static class PasswordValidator
+using System.Text.RegularExpressions;
+
+namespace UserManagementApp.Helpers
 {
-    public static bool IsValid(string password)
+    public static class PasswordValidator
     {
-        if (string.IsNullOrWhiteSpace(password)) return false;
-        if (password.Length < 8 || password.Length > 15) return false;
-        if (!Regex.IsMatch(password, @"[A-Z]")) return false;
-        if (!Regex.IsMatch(password, @"[!@#$%^&*(),.?""{}|<>_\-+=]")) return false;
-        return true;
+        public static bool IsValid(string password)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+                return false;
+
+            if (password.Length < 8 || password.Length > 15)
+                return false;
+
+            if (!Regex.IsMatch(password, @"[A-Z]")) // Uppercase
+                return false;
+
+            if (!Regex.IsMatch(password, @"[!@#$%^&*(),.?""{}|<>_\-+=]")) // Special char
+                return false;
+
+            return true;
+        }
     }
 }
