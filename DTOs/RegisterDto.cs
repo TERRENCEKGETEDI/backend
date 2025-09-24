@@ -1,7 +1,9 @@
-public class RegisterDto
+namespace UserManagementApp.DTOs
 {
-    public string Email { get; set; }
-    public string FullName { get; set; }
-    public string Password { get; set; }
-    public string UniversityId { get; set; }
-}
+    public class RegisterDto
+    {
+        public string Email { get; set; }
+        public string FullName { get; set; }
+        public string Password { get; set; }
+        public string UniversityId { get; set; }
+    }
