@@ -5,3 +5,4 @@ public class University
     [MaxLength(255)] public string? CampusName { get; set; }
     [MaxLength(100)] public string? Province { get; set; }
 }
+ 
